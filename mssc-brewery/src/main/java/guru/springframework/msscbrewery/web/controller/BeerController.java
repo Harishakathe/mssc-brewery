@@ -22,7 +22,7 @@ public class BeerController {
         this.beerService = beerService;
     }
 
-    @GetMapping({"/beerId"})
+    @GetMapping({"/{beerId}"})
     public ResponseEntity<BeerDto> getBeer(@PathVariable UUID beerId){
         return new ResponseEntity<BeerDto>(beerService.getBeerById(beerId), HttpStatus.OK);
     }
